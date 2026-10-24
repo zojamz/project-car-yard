@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyumba Motors - Premium Kenyan Car Yard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-car"></i>
+                <span>NYUMBA MOTORS</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-text">Loading Premium Selection...</div>
+        </div>
+    </div>
+
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><i class="fas fa-car"></i> Nyumba Motors</h2>
+                    <span class="nav-tagline">Kenya's Premium Car Yard</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#inventory" class="nav-link">Inventory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">PREMIUM SELECTION</div>
+            <h1 class="hero-title">Drive Your <span class="gradient-text">Dream</span> in Kenya</h1>
+            <p class="hero-subtitle">Curated collection of premium used vehicles. Meticulously inspected for the Kenyan roads.</p>
+            <div class="hero-buttons">
+                <a href="#inventory" class="btn btn-primary">
+                    <span>Explore Inventory</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-ghost">Schedule Viewing</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="fade-up">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Cars Sold</div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Customer Satisfaction</div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inventory" class="inventory">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">OUR COLLECTION</div>
+                <h2 class="section-title">Premium Vehicles</h2>
+                <p class="section-subtitle">Handpicked selection for discerning drivers</p>
+            </div>
+            
+            <div class="filters" data-aos="fade-up" data-aos-delay="100">
+                <select id="makeFilter" class="filter-select">
+                    <option value="all">All Makes</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Subaru">Subaru</option>
+                </select>
+                <select id="priceFilter" class="filter-select">
+                    <option value="all">All Prices</option>
+                    <option value="0-600000">Under Ksh 600K</option>
+                    <option value="600000-900000">Ksh 600K - 900K</option>
+                    <option value="900000-1300000">Ksh 900K - 1.3M</option>
+                    <option value="1300000+">Above Ksh 1.3M</option>
+                </select>
+                <select id="yearFilter" class="filter-select">
+                    <option value="all">All Years</option>
+                    <option value="2021-2024">2021 - 2024</option>
+                    <option value="2018-2020">2018 - 2020</option>
+                    <option value="2015-2017">2015 - 2017</option>
+                    <option value="2012-2014">2012 - 2014</option>
+                </select>
+            </div>
+
+            <div class="cars-grid" id="carsGrid">
+                <!-- Cars populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">SERVICES</div>
+                <h2 class="section-title">Beyond Just Sales</h2>
+                <p class="section-subtitle">Complete automotive solutions</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h3>Premium Sales</h3>
+                    <p>Curated selection of quality pre-owned vehicles from verified sources</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3>Import Services</h3>
+                    <p>Direct import from Japan, UK & UAE with full documentation</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Transfer & Registration</h3>
+                    <p>Seamless NTSA transfer, logbook processing & registration</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Workshop & Parts</h3>
+                    <p>State-of-the-art service center with genuine spare parts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">GET IN TOUCH</div>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Visit our showroom or reach out today</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Showroom Location</h4>
+                            <p>Westlands, Nairobi, Kenya<br>Along Waiyaki Way</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone Numbers</h4>
+                            <p>+254 711 222 333<br>+254 722 444 555</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>sales@nyumbamotors.co.ke<br>info@nyumbamotors.co.ke</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Business Hours</h4>
+                            <p>Mon - Fri: 8:00 AM - 7:00 PM<br>Sat - Sun: 9:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container" data-aos="fade-left">
+                    <form class="contact-form" id="inquiryForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email Address">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select id="carInterest" required>
+                                <option value="">Vehicle of Interest</option>
+                                <option value="general">General Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Tell us about your requirements..." rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Send Inquiry</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-car"></i> Nyumba Motors</h3>
+                        <span class="footer-tagline">Kenya's Premium Car Yard</span>
+                    </div>
+                    <p>Redefining the car buying experience with premium vehicles, transparent pricing, and exceptional service across Kenya.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#inventory">Inventory</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Popular Models</h4>
+                    <ul>
+                        <li><a href="#inventory">Toyota Harrier</a></li>
+                        <li><a href="#inventory">Nissan X-Trail</a></li>
+                        <li><a href="#inventory">Toyota Corolla</a></li>
+                        <li><a href="#inventory">Honda Fit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Westlands, Nairobi</li>
+                        <li><i class="fas fa-phone"></i> +254 711 222 333</li>
+                        <li><i class="fas fa-envelope"></i> sales@nyumbamotors.co.ke</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nyumba Motors. All rights reserved. | Designed with excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
